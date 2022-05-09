@@ -1,7 +1,11 @@
 import { useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
 import { apiGet } from "../Misc/config";
-import react from "react";
+
+import ShowMainData from "../Commponents/show/ShowMainData";
+import Details from "../Commponents/show/Details";
+import Cast from "../Commponents/show/Cast";
+import Seasons from "../Commponents/show/Seasons";
 
 const reducer = (prevState, action) => {
   switch (action.type) {
@@ -54,13 +58,41 @@ const Show = () => {
   }, [id]);
   console.log("show", show);
 
-  if (isLoading) {
+  if (isLoading || !show) {
     return <div>Data is loaded</div>;
   }
   if (error) {
     <div>Error occured: {error}</div>;
   }
-  return <div>This is Show Page</div>;
+  return (
+    <div>
+      <div>
+        <ShowMainData
+          image={show.image}
+          name={show.name}
+          rating={show.rating}
+          tags={show.genres}
+          summary={show.summary}
+        />
+      </div>
+      <div>
+        <h2>Details</h2>
+        <Details
+          status={show.status}
+          network={show.network}
+          premiered={show.premiered}
+        />
+      </div>
+      <div>
+        <h2>Seasons</h2>
+        <Seasons seasons={show._embedded.seasons} />
+      </div>
+      <div>
+        <h2>Cast</h2>
+        <Cast cast={show._embedded.cast} />
+      </div>
+    </div>
+  );
 };
 
 export default Show;
