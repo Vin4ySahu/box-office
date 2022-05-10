@@ -1,8 +1,13 @@
 import React from "react";
 import MainPagelayout from "../Commponents/MainPagelayout";
+import { StarredStyled } from "./Starred.Styled";
 
 const Starred = () => {
-  return <MainPagelayout>This is STARRED PAGE</MainPagelayout>;
+  return (
+    <StarredStyled>
+      <MainPagelayout> THIS PAGE IS CURRENTLY IN DEVELOPMENT !!</MainPagelayout>
+    </StarredStyled>
+  );
 };
 
 export default Starred;

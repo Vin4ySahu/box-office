@@ -1,6 +1,7 @@
 import styled from "styled-components";
 export const ShowPageWrapper = styled.div`
   padding: 0 20px;
+  background: linear-gradient(to right, #abbaab, #ffffff);
 
   @media only screen and (min-width: 516px) {
     padding: 0 40px;

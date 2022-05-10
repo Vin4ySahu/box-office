@@ -4,6 +4,7 @@ export const FlexGrid = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background: linear-gradient(to right, #ffeeee, #ddefbb);
 `;
 
 export const SearchCard = styled.div`
@@ -39,7 +40,7 @@ export const Star = styled.div`
   display: inline-block;
   width: 18px;
   height: 18px;
-  background-color: #ffc806;
+  background-color: red;
   clip-path: polygon(
     50% 0%,
     61% 35%,
